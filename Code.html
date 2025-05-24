@@ -44,8 +44,8 @@
             height: 100%;
             padding: 0;
             margin: 0;
-            font-size: 9rem;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 5rem;
             text-align: center;
         }
 
@@ -185,7 +185,7 @@
         else if (isMRHK) {
             transition.classList.remove("wrong")
             transition.classList.add("correct")
-            let message = "Richtig! Die erste Hälfte ist 'ZU'. Die zweite findet ihr bei Affen...";
+            let message = "Sehr gut! Guck mal hier: https://learningapps.org/watch?v=pgnngp86c25";
             alert(message);
         }
         else if (is7764) {
@@ -197,7 +197,7 @@
         else if (isZUJM) {
             transition.classList.remove("wrong")
             transition.classList.add("correct")
-            let message = "Sehr gut! Guck mal hier: https://learningapps.org/watch?v=pgnngp86c25";
+            let message = "Richtig! Die erste Hälfte ist 'ZU'. Die zweite findet ihr bei Affen...";
             alert(message);
         }
         else if (is0002) {
@@ -216,6 +216,11 @@
             transition.classList.remove("correct")
             transition.classList.add("wrong")
         }
+
+        _1.value = "";
+        _2.value = "";
+        _3.value = "";
+        _4.value = "";
 
         transition.classList.remove("hidden")
         setTimeout(() => {
