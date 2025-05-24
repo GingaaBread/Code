@@ -20,13 +20,15 @@
             flex-direction: row;
             justify-content: center;
             width: 100%;
+            flex: 1;
+            min-height: 0;
         }
 
         .lock {
             background-color: rgb(58, 56, 56);
             display: block;
-            width: 15rem;
-            height: 15rem;
+            width: 10vw;
+            height: 10vw;
             margin-right: 2rem;
             border-radius: 12%;
         }
@@ -49,7 +51,7 @@
 
         button {
             margin-top: 5rem;
-            font-size: 5rem;
+            font-size: 3rem;
             padding: 2rem;
             background-color: rgb(131, 183, 131);
             cursor: pointer;
@@ -94,16 +96,16 @@
     </div>
     <div class="container">
         <div class="lock">
-            <input type="text" name="1" id="1" autocorrect="off" spellcheck="false" autocomplete="off">
+            <input maxlength="1" type="text" name="1" id="1" autocorrect="off" spellcheck="false" autocomplete="off">
         </div>
         <div class="lock">
-            <input type="text" name="2" id="2" autocorrect="off" spellcheck="false" autocomplete="off">
+            <input maxlength="1" type="text" name="2" id="2" autocorrect="off" spellcheck="false" autocomplete="off">
         </div>
         <div class="lock">
-            <input type="text" name="3" id="3" autocorrect="off" spellcheck="false" autocomplete="off">
+            <input maxlength="1" type="text" name="3" id="3" autocorrect="off" spellcheck="false" autocomplete="off">
         </div>
         <div class="lock">
-            <input type="text" name="4" id="4" autocorrect="off" spellcheck="false" autocomplete="off">
+            <input maxlength="1" type="text" name="4" id="4" autocorrect="off" spellcheck="false" autocomplete="off">
         </div>
     </div>
     <div class="container">
@@ -121,17 +123,22 @@
     const confirm = document.getElementById("btn")
 
     confirm.onclick = function () {
-    let is4444 = _1.value === "4" &&
+        let is4444 = _1.value === "4" &&
             _2.value === "4" &&
             _3.value === "4" &&
             _4.value === "4";
 
-     let is0002 = _1.value === "0" &&
+        let is0002 = _1.value === "0" &&
             _2.value === "0" &&
             _3.value === "0" &&
             _4.value === "2";
 
-    let is7764 = _1.value === "7" &&
+        let is8473 = _1.value === "8" &&
+            _2.value === "4" &&
+            _3.value === "7" &&
+            _4.value === "3";
+
+        let is7764 = _1.value === "7" &&
             _2.value === "7" &&
             _3.value === "6" &&
             _4.value === "4";
@@ -141,19 +148,69 @@
             _3.value === "J" &&
             _4.value === "J";
 
+        let isEEFC = _1.value === "E" &&
+            _2.value === "E" &&
+            _3.value === "F" &&
+            _4.value === "C";
+
         let isMRHK = _1.value === "M" &&
             _2.value === "R" &&
             _3.value === "H" &&
             _4.value === "K";
 
-        
-        if (_1.value === "2" &&
-            _2.value === "4" &&
-            _3.value === "3" &&
-            _4.value === "1"
-        ) {
+        let isZUJM = _1.value === "Z" &&
+            _2.value === "U" &&
+            _3.value === "J" &&
+            _4.value === "M";
+
+
+        if (isIMJJ) {
             transition.classList.remove("wrong")
             transition.classList.add("correct")
+            let message = "Sehr gut! Ihr dürft Umschlag 2 öffnen.";
+            alert(message);
+        }
+        else if (is4444) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "Super! Als Belohnung verrate ich dir nun, was du mit den Affenbildern machen musst!\n\nEs geht darum, herauszufinden, welche Affen beißen und welche harmlos sind. Alle Affen, die beißen, sind auf den gelben Karten abgebildet. Alle Affen, die nicht beißen, sind auf den blauen Bildern abgebildet.\n\nErstellt zunächst einen Entscheidungsbaum, der anhand der Eigenschaften der Bilder entscheidet, wann ein Affe beißt.\n\nAnschließend nutzt die roten Affen, um euren Baum zu testen. Das Lösungswort ist die Anzahl der roten Affen, die beißen.";
+            alert(message);
+        }
+        else if (isEEFC) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "Richtig! Die erste Hälfte ist '84'. Die zweite findet ihr auf dem anderen Blatt.";
+            alert(message);
+        }
+        else if (isMRHK) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "Richtig! Die erste Hälfte ist 'ZU'. Die zweite findet ihr bei Affen...";
+            alert(message);
+        }
+        else if (is7764) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "HERZLICHEN GLÜCKWUNSCH! Ihr habt alle Umschläge aufgedeckt!";
+            alert(message);
+        }
+        else if (isZUJM) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "Sehr gut! Guck mal hier: https://learningapps.org/watch?v=pgnngp86c25";
+            alert(message);
+        }
+        else if (is0002) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "Richtig! Ihr dürft nun den verschlossenen Umschlag öffnen.";
+            alert(message);
+        }
+        else if (is8473) {
+            transition.classList.remove("wrong")
+            transition.classList.add("correct")
+            let message = "Sehr gut! Ihr dürft nun den nächsten Umschlag öffnen.";
+            alert(message);
         }
         else {
             transition.classList.remove("correct")
